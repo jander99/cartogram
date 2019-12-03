@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: jander99
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: sku_pk
+                    nullable: false
+                  name: sku
+                  type: int
+              - column:
+                  name: skuDescription
+                  type: varchar(255)
+              - column:
+                  name: ecoFeatureId
+                  type: int
+              - column:
+                  name: hierarchyId
+                  type: int
+              - column:
+                  name: created
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: timestamp
+            tableName: sku
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: ecofeature_pk
+                  name: id
+                  type: int
+              - column:
+                  name: ecoFeature
+                  type: varchar(255)
+            tableName: ecoFeatures
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: ecofeature_pk
+                  name: id
+                  type: int
+              - column:
+                  name: department
+                  type: int
+              - column:
+                  name: departmentName
+                  type: varchar(40)
