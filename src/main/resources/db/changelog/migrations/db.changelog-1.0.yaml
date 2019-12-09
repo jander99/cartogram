@@ -4,6 +4,7 @@ databaseChangeLog:
       author: jander99
       changes:
         - createTable:
+            tableName: sku
             columns:
               - column:
                   autoIncrement: true
@@ -16,12 +17,18 @@ databaseChangeLog:
               - column:
                   name: skuDescription
                   type: varchar(255)
+                  constraints:
+                    nullable: false
               - column:
                   name: ecoFeatureId
                   type: int
+                  constraints:
+                    nullable: false
               - column:
                   name: hierarchyId
                   type: int
+                  constraints:
+                    nullable: false
               - column:
                   name: created
                   type: timestamp
@@ -30,8 +37,44 @@ databaseChangeLog:
               - column:
                   name: updated
                   type: timestamp
-            tableName: sku
         - createTable:
+            tableName: mapping
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: mapping_pk
+                  name: id
+                  type: int
+              - column:
+                  name: sku
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: goodServiceCode
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: createdBy
+                  type: varchar(255)
+              - column:
+                  name: updated
+                  type: timestamp
+              - column:
+                  name: updatedBy
+                  type: varchar(255)
+
+
+        - createTable:
+            tableName: ecoFeatures
             columns:
               - column:
                   autoIncrement: true
@@ -43,19 +86,114 @@ databaseChangeLog:
               - column:
                   name: ecoFeature
                   type: varchar(255)
-            tableName: ecoFeatures
+                  constraints:
+                    nullable: false
         - createTable:
+            tableName: hierarchy
             columns:
               - column:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    primaryKeyName: ecofeature_pk
+                    primaryKeyName: hierarchy_pk
                   name: id
                   type: int
               - column:
                   name: department
                   type: int
+                  constraints:
+                    nullable: false
               - column:
                   name: departmentName
                   type: varchar(40)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: departmentNumber
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: class
+                  type: varchar(40)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: classNumber
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: subClass
+                  type: varchar(40)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: subClassNumber
+                  type: int
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: product_pk
+                  name: productId
+                  type: int
+              - column:
+                  name: description
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ecoFeature
+                  type: int
+        - createTable:
+            tableName: goodServiceCode
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: gsc_pk
+                  name: goodServiceCode
+                  type: int
+              - column:
+                  name: description
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: timestamp
+        - createTable:
+            tableName: productCode
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pc_pk
+                  name: productCode
+                  type: int
+              - column:
+                  name: description
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: timestamp
+
+
+
