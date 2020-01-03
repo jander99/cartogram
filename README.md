@@ -27,9 +27,9 @@ The HTTP Methods are _DRAFT_ as discussion is needed on what to allow via HTTP.
 | Endpoint | GET | PUT | POST | DELETE |
 |:---------|:---:|:---:|:----:|:------:|
 | /api/v2/ecofeatures |   | X | X |   |
-| /api/v2/ecofeatures/{ecoFeature} |   |   |   | X |
+| /api/v2/ecofeatures/{ecoFeature} | X |   |   | X |
 
-### Heirarchies ###
+### Hierarchies ###
 
 | Endpoint | GET | PUT | POST | DELETE |
 |:---------|:---:|:---:|:----:|:------:|
