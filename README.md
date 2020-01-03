@@ -10,22 +10,45 @@ Part of the rewrite includes envisioning a database that is more normalized from
 
 ## REST API ## 
 
+In order to access this database, we need to materialize a REST model of the data.  
+The HTTP Methods are _DRAFT_ as discussion is needed on what to allow via HTTP.
+
 ### SKU ###
 
 | Endpoint | GET | PUT | POST | DELETE |
 |:---------|:---:|:---:|:----:|:------:|
-| /api/v2/sku/{sku} | X | X | X | X |
-| /api/v2/sku/{sku}/mapping | X | X | X | X |
-| /api/v2/sku/{sku}/mapping/history | X |   |   |   |
-| /api/v2/ecoFeatures/ |   | X | X | X |
-| /api/v2/ecoFeatures/{ecoFeature}/skus | X |   |   |   |
-| /api/v2/hierarchy/  |   | X | X | X |
-| /api/v2/hierarchy/department/{department}  | X |   |   |   |
-| /api/v2/hierarchy/department/{department}/class/{class}  | X |   |   |   |
-| /api/v2/hierarchy/department/{department}/class/{class}/subclass/{subclass}  | X |   |   |   |
-| /api/v2/productCode/  |   | X | X | X |
-| /api/v2/productCode/{productCode}  | X |   |   |   |
-| /api/v2/productCode/{productCode}/gsc/{gsc}  |   | X | X | X |
-| /api/v2/gsc/  |   | X | X | X |
+| /api/v2/skus/{sku} | X | X | X | X |
+| /api/v2/skus/{sku}/mappings | X | X | X | X |
+| /api/v2/skus/{sku}/mappings/history | X |   |   |   |
+| /api/v2/skus/{sku}/mappings/history/{id} | X |   |   | X |
+
+### Eco Features ###
+
+| Endpoint | GET | PUT | POST | DELETE |
+|:---------|:---:|:---:|:----:|:------:|
+| /api/v2/ecofeatures |   | X | X |   |
+| /api/v2/ecofeatures/{ecoFeature} |   |   |   | X |
+
+### Heirarchies ###
+
+| Endpoint | GET | PUT | POST | DELETE |
+|:---------|:---:|:---:|:----:|:------:|
+| /api/v2/hierarchies |   |   | X |   |
+| /api/v2/hierarchies/departments/{department}  | X |   | X |   |
+| /api/v2/hierarchies/departments/{department}/classes/{class}  | X |   | X |   |
+| /api/v2/hierarchies/departments/{department}/classes/{class}/subclasses/{subclass}  | X |   | X |   |
+
+### Product Code,  Goods & Services Codes
+
+| Endpoint | GET | PUT | POST | DELETE |
+|:---------|:---:|:---:|:----:|:------:|
+| /api/v2/productcodes |   | X | X | X |
+| /api/v2/productcodes/{productCode}  | X |   |   |   |
+| /api/v2/productcodes/{productCode}/gsc/{gsc}  |   | X | X | X |
+| /api/v2/gsc |   | X | X | X |
 | /api/v2/gsc/{gsc}  | X |   |   |   |
 | /api/v2/gsc/{gsc}/productCode/{productCode} |   | X | X | X |
+
+## Security ## 
+
+We would need to find out how to properly secure each endpoint and allow some kind of RBAC. 
