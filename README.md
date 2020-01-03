@@ -52,3 +52,14 @@ The HTTP Methods are _DRAFT_ as discussion is needed on what to allow via HTTP.
 ## Security ## 
 
 We would need to find out how to properly secure each endpoint and allow some kind of RBAC. 
+
+## References ##
+
+In no particular order
+
+1. https://auth0.com/blog/rest-architecture-part-1-building-api/
+1. https://restfulapi.net/rest-api-design-tutorial-with-example/
+1. https://restfulapi.net/resource-naming/
+1. https://hackernoon.com/restful-api-design-step-by-step-guide-2f2c9f9fcdbf
+1. https://www.restapitutorial.com/lessons/restfulresourcenaming.html
+1. https://www.moesif.com/blog/api-guide/api-design-guidelines/
