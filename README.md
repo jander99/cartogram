@@ -53,6 +53,20 @@ The HTTP Methods are _DRAFT_ as discussion is needed on what to allow via HTTP.
 
 We would need to find out how to properly secure each endpoint and allow some kind of RBAC. 
 
+## Analysis of Existing Applications Usage of the V1 Database ##
+
+| | Cartographer | Minimap | SkuLagoon | MidnightMapper
+
+| Table | Operation | | | |
+|-------|-----------|-|-|-| 
+| | | | | |
+
+| Table | Operation | Cartographer | Minimap | SkuLagoon | MidnightMapper |
+|---|---|---|---|---|---|
+| Draft Mappings  | SELECT  |   |   |   |   |
+|   |   |   |   |   |   |
+|   |   |   |   |   |   |
+
 ## References ##
 
 In no particular order
