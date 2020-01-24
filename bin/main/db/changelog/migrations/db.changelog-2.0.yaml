@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: jander99
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ecoFeatureId
+            baseTableName: sku
+            constraintName: sku_eco_fk
+            referencedColumnNames: id
+            referencedTableName: ecoFeatures
+
+        - addForeignKeyConstraint:
+            baseColumnNames: hierarchyId
+            baseTableName: sku
+            constraintName: sku_hier_fk
+            referencedColumnNames: id
+            referencedTableName: hierarchy
+
+        - addForeignKeyConstraint:
+            baseColumnNames: sku
+            baseTableName: mapping
+            constraintName: mapping_sku_fk
+            referencedColumnNames: sku
+            referencedTableName: sku
+
+        - addForeignKeyConstraint:
+            baseColumnNames: goodServiceCode
+            baseTableName: mapping
+            constraintName: mapping_gsc_fk
+            referencedColumnNames: goodServiceCode
+            referencedTableName: goodServiceCode
+
+        - addForeignKeyConstraint:
+            baseColumnNames: goodServiceCode
+            baseTableName: mapping
+            constraintName: mapping_gsc_fk
+            referencedColumnNames: goodServiceCode
+            referencedTableName: goodServiceCode
