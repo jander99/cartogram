@@ -17,20 +17,10 @@ The HTTP Methods are _DRAFT_ as discussion is needed on what to allow via HTTP.
 
 | Endpoint | GET | PUT | POST | DELETE |
 |:---------|:---:|:---:|:----:|:------:|
-| /api/v2/sku-mappings/ | X |   |   |   |
-| /api/v2/sku-mappings/{sku}/ | X | X | X | X |
+| /api/v2/sku-mappings | X |   |   |   |
+| /api/v2/sku-mappings/{sku} | X | X | X | X |
 | /api/v2/sku-mappings/{sku}/history | X |   |   |   |
 | /api/v2/sku-mappings/{sku}/history/{id} | X |   |   |   |
-
-## REST API TBD ##
-### Hierarchies ###
-
-| Endpoint | GET | PUT | POST | DELETE |
-|:---------|:---:|:---:|:----:|:------:|
-| /api/v2/hierarchies | X |   | X |   |
-| /api/v2/hierarchies/departments/{department}  | X |   | X |   |
-| /api/v2/hierarchies/departments/{department}/classes/{class}  | X |   | X |   |
-| /api/v2/hierarchies/departments/{department}/classes/{class}/subclasses/{subclass}  | X |   | X |   |
 
 ### Product Code,  Goods & Services Codes
 
@@ -42,6 +32,18 @@ The HTTP Methods are _DRAFT_ as discussion is needed on what to allow via HTTP.
 | /api/v2/gsc |   | X | X | X |
 | /api/v2/gsc/{gsc}  | X |   |   |   |
 | /api/v2/gsc/{gsc}/productCode/{productCode} |   | X | X | X |
+
+## REST API TBD ##
+### Hierarchies ###
+
+| Endpoint | GET | PUT | POST | DELETE |
+|:---------|:---:|:---:|:----:|:------:|
+| /api/v2/hierarchies | X |   | X |   |
+| /api/v2/hierarchies/departments/{department}  | X |   | X |   |
+| /api/v2/hierarchies/departments/{department}/classes/{class}  | X |   | X |   |
+| /api/v2/hierarchies/departments/{department}/classes/{class}/subclasses/{subclass}  | X |   | X |   |
+
+
 
 ## Search ##
 
