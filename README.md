@@ -43,6 +43,19 @@ The HTTP Methods are _DRAFT_ as discussion is needed on what to allow via HTTP.
 | /api/v2/gsc/{gsc}  | X |   |   |   |
 | /api/v2/gsc/{gsc}/productCode/{productCode} |   | X | X | X |
 
+## Search ##
+
+Some APIs will need a search function. This should be implemented on the LIST resource (e.g. /sku-mappings). 
+
+As of Feb 05 2020 there is no definitive search guideline in the API Guide. We will make our own. 
+In order to facilitate easy code, a search will consist of two query parameters: 
+1) `q` - the query (e.g. `q=concrete`, `q=151345`)
+1) field - pipe-separated list of fields to search (e.g. `field=desc`, `field=skunumber`)
+
+I would like community feedback before implementing any kind of search in our API as this is something that needs to be flexible enough without requiring so much coding and customization beyond normal GETs
+
+A Spring Data JPA alternative would be to use [Specifications](https://www.baeldung.com/rest-api-search-language-spring-data-specifications) but that does not guarantee search, only filtering.  
+
 ## Security ## 
 
 We would need to find out how to properly secure each endpoint and allow some kind of RBAC. 
