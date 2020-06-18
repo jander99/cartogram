@@ -34,7 +34,8 @@ public class ProductCode {
     private String updatedBy;
 
     @OneToMany(mappedBy = "productCode")
-    @JsonBackReference
+    @JsonBackReference     
+    @JsonIgnore
     Set<SovosCodeMapping> sovosCodeMappings;
 
 }

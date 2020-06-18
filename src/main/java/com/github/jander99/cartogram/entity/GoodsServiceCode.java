@@ -35,5 +35,6 @@ public class GoodsServiceCode {
 
     @OneToMany(mappedBy = "goodsServiceCode")
     @JsonBackReference
+    @JsonIgnore
     Set<SovosCodeMapping> sovosCodeMappings;
 }

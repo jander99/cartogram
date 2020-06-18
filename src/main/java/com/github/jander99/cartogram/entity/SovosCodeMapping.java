@@ -24,7 +24,7 @@ public class SovosCodeMapping {
     @ManyToOne
     @MapsId("pc_id")
     @JoinColumn(name = "pc_id")
-    @JsonManagedReference
+    //@JsonManagedReference
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "productCode")
     @JsonIdentityReference(alwaysAsId = true)
@@ -33,7 +33,7 @@ public class SovosCodeMapping {
     @ManyToOne
     @MapsId("gsc_id")
     @JoinColumn(name = "gsc_id")
-    @JsonManagedReference
+    //@JsonManagedReference
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "goodsServiceCode")
     @JsonIdentityReference(alwaysAsId = true)
